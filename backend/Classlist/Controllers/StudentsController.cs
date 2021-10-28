@@ -29,7 +29,7 @@ namespace Classlist.Controllers
             return Ok(studentsService.GetAll(classId));
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("{id}/age")]
         public IActionResult SetAge(int id, int age)
         {
@@ -41,7 +41,7 @@ namespace Classlist.Controllers
             return BadRequest();
         }
         
-        [HttpPost]
+        [HttpGet]
         [Route("{id}/clazz")]
         public IActionResult SetClazz(int id, int clazzId)
         {

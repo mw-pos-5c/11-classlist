@@ -1,1 +1,38 @@
-<p>student-overview works!</p>
+<div>
+  <h3>Klasse {{data.selectedClazz?.name ?? "??"}}</h3>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>
+      M/W
+    </th>
+    <th>
+      Name
+    </th>
+    <th>
+      Alter
+    </th>
+    <th>
+
+    </th>
+    <th>
+      Registriert
+    </th>
+    <th>
+      Klasse
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of data.selectedStudents">
+    <td><div [class.male]="row.gender == 'M'" [class.female]="row.gender == 'F'"></div></td>
+    <td>{{row.lastname}} {{row.firstname}}</td>
+    <td>{{displayAge(row.age)}}</td>
+    <td><input type="number" [value]="row.age" (change)="setStudentAge(row, $event)"></td>
+    <td><div *ngIf="row.registered" class="check"></div></td>
+    <td><app-clazz-selector [clazzes]="data.selectableClazzes" (selected)="moveStudent(row, $event)" ></app-clazz-selector> </td>
+  </tr>
+  </tbody>
+</table>

@@ -7,6 +7,8 @@ namespace Classlist.DTOs
         public int Id { get; set; }
         public int Age { get; set; }
         public int? ClazzId { get; set; }
+        
+        public string Gender { get; set; }
         public string Lastname { get; set; }
         public string Firstname { get; set; }
         public bool Registered { get; set; }
@@ -17,6 +19,7 @@ namespace Classlist.DTOs
             {
                 Id = student.Id,
                 Age = student.Age,
+                Gender = student.Gender,
                 Firstname = student.Firstname,
                 Lastname = student.Lastname,
                 Registered = student.Registered,

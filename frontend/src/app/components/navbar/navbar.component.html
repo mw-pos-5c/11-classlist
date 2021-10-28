@@ -1,3 +1,5 @@
-<div>
-  <button *ngFor="let clazz of clazzs">{{clazz.name}}</button>
+<div class="container">
+  Klassenauswahl:
+  <app-clazz-selector [clazzes]="data.clazzes" (selected)="setClazz($event)"></app-clazz-selector>
+
 </div>

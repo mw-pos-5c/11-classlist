@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataProviderService} from "../../services/data-provider.service";
+import {ClassListService} from "../../services/class-list.service";
 import Clazz from "../../models/Clazz";
 
 @Component({
@@ -9,16 +9,14 @@ import Clazz from "../../models/Clazz";
 })
 export class NavbarComponent implements OnInit {
 
-  clazzs: Clazz[] = [];
 
-  constructor(private data: DataProviderService) {
+  constructor(public data: ClassListService) {
   }
 
   ngOnInit(): void {
-    this.data.getClazzes().subscribe(value => {
-      this.clazzs = value;
-
-    });
   }
 
+  setClazz(clazz: Clazz) {
+    this.data.setSelectedClazz(clazz);
+  }
 }

@@ -26,7 +26,7 @@ namespace Classlist.Services
 
         public IEnumerable<StudentDto> GetAll(int classId)
         {
-            return db.Students.Where(s => s.ClazzId == classId).Select(s => StudentDto.From(s));
+            return db.Students.Where(s => s.ClazzId == classId).OrderBy(student => student.Lastname).Select(s => StudentDto.From(s));
         }
         
 

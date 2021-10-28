@@ -1,0 +1,29 @@
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 0 15px;
+}
+
+.male {
+  background: url("/assets/gender/male.png") center;
+  height: 32px;
+  width: 40px;
+}
+
+.female {
+  background: url("/assets/gender/female.png") center;
+  height: 32px;
+  width: 40px;
+}
+
+.check {
+  background: url("/assets/check.png") center;
+  height: 32px;
+  width: 40px;
+}
